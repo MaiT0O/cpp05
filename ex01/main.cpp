@@ -18,8 +18,6 @@ int main()
 
     std::cout << "Bureaucrat Alice : " << good.getGrade() << std::endl;
     std::cout << "Bureaucrat Bob : " << bad.getGrade() << std::endl;
-    good.signForm(f1);
-    bad.signForm(f2);
 
     std::cout << "\n\033[35mTentative de signature par Bob (trop bas) :\033[0m" << std::endl;
     f1.beSigned(bad);
