@@ -12,11 +12,12 @@ class Bureaucrat
         size_t            _grade;
     
     public:
-        std::string     getName()const;
-        size_t          getGrade()const;
-        void            upGrade();
-        void            downGrade();
-        void            signForm(Form& f);
+        const std::string&  getName() const;
+        const size_t&       getGrade() const;
+        void                upGrade();
+        void                downGrade();
+        void                signForm(Form& f);
+
         Bureaucrat(std::string const name, int grade);
         Bureaucrat& operator=(const Bureaucrat& src);
         Bureaucrat(const Bureaucrat& copy);

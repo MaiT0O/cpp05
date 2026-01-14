@@ -11,7 +11,9 @@ class RobotomyRequestForm : public AForm
     private:
         std::string _target;
 
-        virtual void    performAction() const;
+    protected:
+        void    performAction() const;
+
     public:
         RobotomyRequestForm(void);
         RobotomyRequestForm(std::string target);

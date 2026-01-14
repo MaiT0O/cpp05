@@ -30,7 +30,7 @@ PresidentialPardonForm::~PresidentialPardonForm()
     std::cout << "\033[31mPresidentialPardonForm Destructor called, his target was " << this->_target << "\033[0m" << std::endl;
 }
 
-void    PresidentialPardonForm::performAction()const
+void    PresidentialPardonForm::performAction() const
 {
     std::cout << "Heeeeeey " << this->_target << ", be happt you have been pardoned by Zaphod Beeblebrox!" << std::endl;
 }

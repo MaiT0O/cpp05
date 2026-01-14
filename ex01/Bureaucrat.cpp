@@ -48,12 +48,12 @@ Bureaucrat::~Bureaucrat()
 	std::cout << "\033[31mBureaucrat Deconstructor for " << this->_name << " called\033[0m" << std::endl;
 }
 
-std::string Bureaucrat::getName()const
+const std::string& Bureaucrat::getName() const
 {
     return this->_name;
 }
 
-size_t  Bureaucrat::getGrade()const
+const size_t&  Bureaucrat::getGrade() const
 {
     return this->_grade;
 }

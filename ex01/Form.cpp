@@ -65,17 +65,17 @@ void Form::beSigned(Bureaucrat &signer)
     }	
 }
 
-const std::string	Form::getName(void)const
+const std::string&	Form::getName() const
 {
 	return (this->_name);
 }
 
-bool	Form::getIsSigned(void)const
+const bool&	Form::getIsSigned() const
 {
 	return (this->_is_signed);
 }
 
-const std::string	Form::getIsSignedStr(void)const
+const std::string	Form::getIsSignedStr()
 {
 	if (this->_is_signed)
 		return ("✓ true");
@@ -83,12 +83,12 @@ const std::string	Form::getIsSignedStr(void)const
 		return ("✗ false");
 }
 
-int	Form::getSignGrade(void)const
+const int&	Form::getSignGrade() const
 {
 	return (this->_sign_grade);
 }
 
-int	Form::getExecGrade(void)const
+const int&	Form::getExecGrade() const
 {
 	return (this->_exec_grade);
 }

@@ -19,13 +19,12 @@ class Form
 		Form &operator=(const Form &src);
 		~Form();
 
-
-		void beSigned(Bureaucrat &signer);
-        const std::string	getIsSignedStr(void)const;
-        const std::string getName(void)const;
-		bool getIsSigned(void)const;
-		int getSignGrade(void)const;
-		int getExecGrade(void)const;
+		void 				beSigned(Bureaucrat &signer);
+        const std::string	getIsSignedStr();
+        const std::string&	getName() const;
+		const bool& 		getIsSigned() const;
+		const int& 			getSignGrade() const;
+		const int&			getExecGrade() const;
 
 	class GradeTooLowException : public std::exception
 	{
