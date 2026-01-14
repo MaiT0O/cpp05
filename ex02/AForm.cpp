@@ -95,12 +95,12 @@ int	AForm::getExecGrade(void)const
 
 const char *AForm::GradeTooLowException::what(void) const throw()
 {
-	return ("Grade too low");
+	return ("Form grade too low");
 };
 
 const char *AForm::GradeTooHighException::what(void) const throw()
 {
-	return ("Grade too high");
+	return ("Form grade too high");
 };
 
 const char *AForm::IsNotSignedException::what(void) const throw()
@@ -113,7 +113,7 @@ void	AForm::execute(Bureaucrat const& executor)const
 	if (this->_is_signed == false)
 		throw IsNotSignedException();
 	if (static_cast<size_t>(this->_exec_grade) < executor.getGrade())
-		throw GradeTooLowException();
+		throw Bureaucrat::GradeTooLowException();
 
 	performAction();
 }

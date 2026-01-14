@@ -42,7 +42,7 @@ Form &Form::operator=(const Form &src)
 
 Form::~Form()
 {
-	std::cout << "\033[31mAForm Deconstructor for " << this->_name << " called" << std::endl;
+	std::cout << "\033[31mAForm Deconstructor for " << this->_name << " called\033[0m" << std::endl;
 }
 
 void Form::beSigned(Bureaucrat &signer)
@@ -95,12 +95,12 @@ int	Form::getExecGrade(void)const
 
 const char *Form::GradeTooLowException::what(void) const throw()
 {
-	return ("Grade too low");
+	return ("Form grade too low");
 };
 
 const char *Form::GradeTooHighException::what(void) const throw()
 {
-	return ("Grade too high");
+	return ("Form grade too high");
 };
 
 std::ostream	&operator<<(std::ostream &o, Form *a)

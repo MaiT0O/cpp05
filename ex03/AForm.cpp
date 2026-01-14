@@ -50,7 +50,7 @@ void AForm::beSigned(Bureaucrat &signer)
     try
     {
         if ((int)signer.getGrade() > this->getSignGrade())
-		    throw(AForm::GradeTooHighException());
+		    throw(AForm::GradeTooLowException());
 	    else if (this->getIsSigned() == false)
 	    {
 	    	this->_is_signed = true;
@@ -59,9 +59,9 @@ void AForm::beSigned(Bureaucrat &signer)
 	    else
 	    	std::cout << "\033[33m" << signer.getName() << " couldn’t sign " << this->getName() << " because this form is already signed\033[0m" << std::endl;
     }
-    catch(AForm::GradeTooHighException& e)
+    catch(AForm::GradeTooLowException& e)
     {
-        std::cerr << "\033[33m" << signer.getName() << " couldn’t sign " << this->getName() << " because : " << e.what() << "\033[0m" << std::endl;
+        std::cerr << "\033[33m" << signer.getName() << " couldn’t sign " << this->getName() << " because " << e.what() << "\033[0m" << std::endl;
     }	
 }
 
