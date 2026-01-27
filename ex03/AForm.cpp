@@ -65,17 +65,17 @@ void AForm::beSigned(Bureaucrat &signer)
     }	
 }
 
-const std::string	AForm::getName(void)const
+const std::string&	AForm::getName() const
 {
 	return (this->_name);
 }
 
-bool	AForm::getIsSigned(void)const
+const bool&	AForm::getIsSigned() const
 {
 	return (this->_is_signed);
 }
 
-const std::string	AForm::getIsSignedStr(void)const
+const std::string	AForm::getIsSignedStr()
 {
 	if (this->_is_signed)
 		return ("✓ true");
@@ -83,12 +83,12 @@ const std::string	AForm::getIsSignedStr(void)const
 		return ("✗ false");
 }
 
-int	AForm::getSignGrade(void)const
+const int&	AForm::getSignGrade() const
 {
 	return (this->_sign_grade);
 }
 
-int	AForm::getExecGrade(void)const
+const int&	AForm::getExecGrade() const
 {
 	return (this->_exec_grade);
 }
@@ -108,7 +108,7 @@ const char *AForm::IsNotSignedException::what(void) const throw()
 	return ("Form not signed");
 };
 
-void	AForm::execute(Bureaucrat const& executor)const
+void	AForm::execute(const Bureaucrat& executor) const
 {
 	if (this->_is_signed == false)
 		throw IsNotSignedException();

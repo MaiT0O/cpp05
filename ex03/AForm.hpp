@@ -11,7 +11,9 @@ class AForm
 		bool              _is_signed;
 		const int         _sign_grade;
 		const int         _exec_grade;
-		virtual void performAction()const = 0;
+
+	protected:
+		virtual void performAction() const = 0;
 
 	public:
 		AForm(void);
@@ -21,13 +23,13 @@ class AForm
 		virtual ~AForm();
 
 		void beSigned(Bureaucrat &signer);
-		void execute(Bureaucrat const& executor)const;
+		void execute(const Bureaucrat& executor) const;
 
-        const std::string	getIsSignedStr(void)const;
-        const std::string getName(void)const;
-		bool getIsSigned(void)const;
-		int getSignGrade(void)const;
-		int getExecGrade(void)const;
+        const std::string	getIsSignedStr();
+        const std::string&  getName() const;
+		const bool& 		getIsSigned() const;
+		const int&			getSignGrade() const;
+		const int&			getExecGrade() const;
 
 	class GradeTooLowException : public std::exception
 	{

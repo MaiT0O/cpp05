@@ -12,7 +12,9 @@ class ShrubberyCreationForm : public AForm
     private:
         std::string _target;
 
-        virtual void    performAction() const;
+    protected:
+        void    performAction() const;
+
     public:
         ShrubberyCreationForm(void);
         ShrubberyCreationForm(std::string target);

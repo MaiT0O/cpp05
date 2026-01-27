@@ -20,12 +20,12 @@ class Bureaucrat
         ~Bureaucrat();
 
         void    signForm(AForm& f);
-        void    executeForm(AForm const & form) const;
+        void    executeForm(const AForm& form) const;
 
-        std::string     getName()const;
-        size_t          getGrade()const;
-        void            upGrade();
-        void            downGrade();
+        const std::string&  getName() const;
+        const size_t&       getGrade() const;
+        void                upGrade();
+        void                downGrade();
 
         class GradeTooHighException : public std::exception
         {
